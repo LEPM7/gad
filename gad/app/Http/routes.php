@@ -15,6 +15,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'actividad'], function() {
+    
+    Route::get('view/{id}', [
+        'uses' => 'TestController@view',
+        'as'   => 'actividadview' 
+    ]);
+    
+});
+
+Route::get('admin', function () {
+    return view('admin.admin');
+});
+
+Route::group(['prefix' => 'admin'], function() {
+    
+    Route::resource('usuarios','UsuariosController');
+    Route::resource('estadios','EstadiosController');
+    
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
