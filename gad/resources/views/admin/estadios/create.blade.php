@@ -145,5 +145,6 @@
         </div>
       </div>  
   </body>
+  <script type="text/javascript" src="{{asset('plugins/f7/dist/js/my-app.sjs')}}"></script>
   <script type="text/javascript" src="{{asset('plugins/f7/dist/js/framework7.min.js')}}"></script>
 </html>

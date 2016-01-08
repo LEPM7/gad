@@ -10,7 +10,8 @@ use App\Usuario;
 class UsuariosController extends Controller
 {
     public function index(){
-        
+        $usuarios = Usuario::orderBy('usuario','DESC')->paginate(100);
+        return view('admin.usuarios.all')->with('usuarios',$usuarios);
     }
     
     public function create(){
@@ -42,5 +43,10 @@ class UsuariosController extends Controller
     
     public function destroy($id){
         
+    }
+    
+    public function delete($id){
+        $affectedRows = Usuario::where('usuario', '=', $id)->delete();
+        return view('admin.admin');
     }
 }

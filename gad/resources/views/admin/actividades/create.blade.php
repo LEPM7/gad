@@ -29,32 +29,10 @@
               <!-- /End of Top Navbar-->
 
               <div class="page-content">
-              <div class="login-screen-title">Agregar Usuarios</div>
-                    {!! Form::open(['route' => 'admin.usuarios.store', 'method' => 'POST']) !!}
+              <div class="login-screen-title">Agregar Actividades</div>
+                    {!! Form::open(['route' => 'admin.actividades.store', 'method' => 'POST']) !!}
                     <div class="list-block">
                         <ul>
-                            <!-- Row -->
-                            <li>
-                              <div class="item-content">
-                                <div class="item-inner">
-                                    {!! Form::label('nickname','Nombre de Usuario:',['class' => 'item-title label']) !!}
-                                  <div class="item-input">
-                                    {!! Form::text('nickname', null, ['placeholder' => 'Nickname', 'required']) !!}
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                            <!-- Row -->
-                            <li>
-                              <div class="item-content">
-                                <div class="item-inner">
-                                    {!! Form::label('password','Password:',['class' => 'item-title label']) !!}
-                                  <div class="item-input">
-                                    {!! Form::password('password', null, ['placeholder' => 'Password', 'required']) !!}
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
                             <!-- Row -->
                             <li>
                               <div class="item-content">
@@ -70,9 +48,9 @@
                             <li>
                               <div class="item-content">
                                 <div class="item-inner">
-                                    {!! Form::label('apellido','Apellido:',['class' => 'item-title label']) !!}
+                                    {!! Form::label('descripcion','Descripcion:',['class' => 'item-title label']) !!}
                                   <div class="item-input">
-                                    {!! Form::text('apellido', null, ['placeholder' => 'Apellido', 'required']) !!}
+                                    {!! Form::text('descripcion', null, ['placeholder' => 'Descripcion', 'required']) !!}
                                   </div>
                                 </div>
                               </div>
@@ -81,9 +59,9 @@
                             <li>
                               <div class="item-content">
                                 <div class="item-inner">
-                                    {!! Form::label('telefono','Telefono:',['class' => 'item-title label']) !!}
+                                    {!! Form::label('fecha_inicio','Fecha Inicio:',['class' => 'item-title label']) !!}
                                   <div class="item-input">
-                                    {!! Form::text('telefono', null, ['placeholder' => 'Telefono', 'required']) !!}
+                                    {!! Form::date('fecha_inicio', '2016-01-01', ['placeholder' => 'Fecha Inicio', 'required']) !!}
                                   </div>
                                 </div>
                               </div>
@@ -92,9 +70,9 @@
                             <li>
                               <div class="item-content">
                                 <div class="item-inner">
-                                    {!! Form::label('fecha_nacimiento','Fecha Nacimiento',['class' => 'item-title label']) !!}
+                                    {!! Form::label('fecha_fin','Fecha Fin:',['class' => 'item-title label']) !!}
                                   <div class="item-input">
-                                    {!! Form::date('fecha_nacimiento', '2016-01-01', ['placeholder' => 'Fecha Nacimiento', 'required']) !!}
+                                    {!! Form::date('fecha_fin', '2016-01-01', ['placeholder' => 'Fecha Fin', 'required']) !!}
                                   </div>
                                 </div>
                               </div>
@@ -103,9 +81,9 @@
                             <li>
                               <div class="item-content">
                                 <div class="item-inner">
-                                    {!! Form::label('dpi','DPI',['class' => 'item-title label']) !!}
+                                    {!! Form::label('cupo','Cupo:',['class' => 'item-title label']) !!}
                                   <div class="item-input">
-                                    {!! Form::text('dpi', null, ['placeholder' => 'DPI']) !!}
+                                    {!! Form::number('cupo', null, ['placeholder' => 'Cupo', 'required']) !!}
                                   </div>
                                 </div>
                               </div>
@@ -114,9 +92,9 @@
                             <li>
                               <div class="item-content">
                                 <div class="item-inner">
-                                    {!! Form::label('direccion','Nombre',['class' => 'item-title label']) !!}
+                                    {!! Form::label('limite','Limite:',['class' => 'item-title label']) !!}
                                   <div class="item-input">
-                                    {!! Form::text('direccion', null, ['placeholder' => 'Direccion', 'required']) !!}
+                                    {!! Form::number('limite', null, ['placeholder' => 'Limite', 'required']) !!}
                                   </div>
                                 </div>
                               </div>
@@ -125,12 +103,9 @@
                             <li>
                               <div class="item-content">
                                 <div class="item-inner">
-                                    {!! Form::label('activo','Activo',['class' => 'item-title label']) !!}
+                                    {!! Form::label('precio','Precio:',['class' => 'item-title label']) !!}
                                   <div class="item-input">
-                                      <label class="label-switch">
-                                      {!! Form::checkbox('activo', null, ['required']) !!}
-                                      <div class="checkbox"></div>
-                                    </label>                                    
+                                    {!! Form::number('precio', null, ['placeholder' => 'Precio', 'step' => '0.01', 'required']) !!}
                                   </div>
                                 </div>
                               </div>
@@ -139,9 +114,9 @@
                             <li>
                               <div class="item-content">
                                 <div class="item-inner">
-                                    {!! Form::label('rol','Rol',['class' => 'item-title label']) !!}
+                                    {!! Form::label('estadio','Estadio:',['class' => 'item-title label']) !!}
                                   <div class="item-input">
-                                    {!! Form::select('rol',['usuario' => 'usuario'] ,['required']) !!}
+                                    {!! Form::select('estadio',$estadios ,['required']) !!}
                                   </div>
                                 </div>
                               </div>

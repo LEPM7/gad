@@ -31,27 +31,31 @@
               <div class="page-content login-screen-content">
             <div class="login-screen-title">Administrador</div>
             <!-- Login form -->
-            <form>
+            {!! Form::open(['route' => 'admin.index', 'method' => 'POST']) !!}     
+            <!-- Login form -->
               <div class="list-block">
                 <ul>
-                  <li class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Contrasena</div>
-                      <div class="item-input">
-                        <input type="password" name="password" placeholder="Password">
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                            {!! Form::label('password','Password:',['class' => 'item-title label']) !!}
+                          <div class="item-input">
+                            {!! Form::password('password', null, ['placeholder' => 'Password', 'required']) !!}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
                 </ul>
               </div>
               <div class="list-block">
                 <ul>
                   <li>
-                <p><a href="#" class="  button button-fill button-big">Sing In</a></p>  
+                      {!! Form::submit('Sing In', ['class' => 'button button-fill button-big']) !!}
                   </li>
                 </ul>
               </div>
-            </form>
+                {!! Form::close() !!}
+             </div>
           </div>
 
             </div>

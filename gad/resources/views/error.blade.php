@@ -13,7 +13,7 @@
     <!-- Path to Framework7 color related styles, iOS Theme -->
     <link rel="stylesheet" href="{{asset('plugins/f7/dist/css/framework7.material.colors.min.css')}}">
   </head>
-  <body>
+  <body class="theme-red">
       <div class="views">
         <div class="view view-main">
           <div class="pages">
@@ -21,7 +21,7 @@
             <div data-page="index" class="page navbar-fixed">
 
               <!-- Top Navbar-->
-              <div class="navbar">
+              <div class="navbar ">
                 <div class="navbar-inner">
                   <div class="center">GAD</div>
                 </div>
@@ -29,40 +29,9 @@
               <!-- /End of Top Navbar-->
 
               <div class="page-content login-screen-content">
-            <div class="login-screen-title">Gestion Actividades Deportivas</div>
-            <!-- Login form -->
-            <form>
-              <div class="list-block">
-                <ul>
-                  <li class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Usuario</div>
-                      <div class="item-input">
-                        <input type="text" name="username" placeholder="Username">
-                      </div>
-                    </div>
-                  </li>
-                  <li class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Contrasena</div>
-                      <div class="item-input">
-                        <input type="password" name="password" placeholder="Password">
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="list-block">
-                <ul>
-                  <li>
-                    <p><a href="#" class="button button-fill button-big">Sing In</a></p>  
-                  </li>
-                </ul>
-                <a href="{{route('admin')}}" >Administrador</a>
-              </div>
-            </form>
-          </div>
-
+                <div class="login-screen-title">Error</div>
+                <div class="login-screen-title">{{$error}}</div>
+            </div>
             </div>
           </div>
         </div>

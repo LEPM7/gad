@@ -11,7 +11,8 @@ use App\Estadio;
 class EstadiosController extends Controller
 {
     public function index(){
-        
+        $estadios = Estadio::orderBy('estadio','DESC')->paginate(100);
+        return view('admin.estadios.all')->with('estadios',$estadios);
     }
     
     public function create(){
@@ -43,5 +44,10 @@ class EstadiosController extends Controller
     
     public function destroy($id){
         
+    }
+    
+    public function delete($id){
+        $affectedRows = Estadio::where('estadio', '=', $id)->delete();
+        return view('admin.admin');
     }
 }

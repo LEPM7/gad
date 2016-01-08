@@ -29,17 +29,17 @@
                   <!-- /End of Top Navbar-->
 
                   <div class="page-content">
-                      <div class="login-screen-title">Menu Administrador</div>
+                      <div class="login-screen-title">Menu Administrador {{session()->get('admin')}}</div>
                       <p><a href="{{ route('admin.usuarios.create') }}" class="button">Anadir Usuario</a></p>   
                       <p><a href="#" class="button">Eliminar Usuario</a></p>          
-                      <p><a href="#" class="button">Anadir Actividad</a></p>
+                      <p><a href="{{ route('admin.actividades.create') }}" class="button">Anadir Actividad</a></p>
                       <p><a href="#" class="button">Eliminar Actividad</a></p>          
                       <p><a href="{{ route('admin.estadios.create') }}" class="button">Anadir Estadio</a></p>
                       <p><a href="#" class="button">Eliminar Estadio</a></p>          
                       <p><a href="#" class="button">Usuarios</a></p>
                       <p><a href="#" class="button">Actividades</a></p>          
                       <p><a href="#" class="button">Estadios</a></p>
-                      <p><a href="#" class="button">Salir</a></p>          
+                      <p><a href="{{ route('admin.menu') }}" class="button">Salir</a></p>          
                   </div>
             </div>
           </div>

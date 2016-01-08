@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+        'uses' => 'IndexController@index',
+        'as'   => 'index' 
+    ]);
 
 Route::group(['prefix' => 'actividad'], function() {
     
@@ -24,16 +25,48 @@ Route::group(['prefix' => 'actividad'], function() {
     
 });
 
-Route::get('admin', function () {
-    return view('admin.admin');
-});
-
 Route::group(['prefix' => 'admin'], function() {
+    Route::get('/',
+           [
+               'uses' => 'IndexController@admin',
+               'as' => 'admin'
+           ]);
+    
+    Route::post('index',
+           [
+               'uses' => 'IndexController@adminIndex',
+               'as' => 'admin.index'
+           ]);
+    
+    Route::get('menu',
+           [
+               'uses' => 'IndexController@adminMenu',
+               'as' => 'admin.menu'
+           ]);
+
     
     Route::resource('usuarios','UsuariosController');
+    Route::get('usuarios/{id}/delete',
+           [
+               'uses' => 'UsuariosController@delete',
+               'as' => 'admin.usuarios.delete'
+           ]);
+    
     Route::resource('estadios','EstadiosController');
+    Route::get('estadios/{id}/delete',
+           [
+               'uses' => 'EstadiosController@delete',
+               'as' => 'admin.estadios.delete'
+           ]);
+    Route::resource('actividades', 'ActividadesController');
+    Route::get('actividades/{id}/delete',
+           [
+               'uses' => 'ActividadesController@delete',
+               'as' => 'admin.actividades.delete'
+           ]);
     
 });
+
 
 /*
 |--------------------------------------------------------------------------
