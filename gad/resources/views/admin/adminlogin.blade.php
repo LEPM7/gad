@@ -31,8 +31,8 @@
               <div class="page-content login-screen-content">
             <div class="login-screen-title">Administrador</div>
             <!-- Login form -->
-            {!! Form::open(['route' => 'admin.index', 'method' => 'POST']) !!}     
-            <!-- Login form -->
+            {!! Form::open(['url' => '/login', 'method' => 'POST']) !!}
+                <!-- Login form -->
               <div class="list-block">
                 <ul>
                     <li>
@@ -50,6 +50,7 @@
               <div class="list-block">
                 <ul>
                   <li>
+                    {!! Form::hidden('nickname','admin') !!}
                       {!! Form::submit('Sing In', ['class' => 'button button-fill button-big']) !!}
                   </li>
                 </ul>

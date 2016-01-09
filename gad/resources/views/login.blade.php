@@ -31,22 +31,26 @@
               <div class="page-content login-screen-content">
             <div class="login-screen-title">Gestion Actividades Deportivas</div>
             <!-- Login form -->
-            <form>
+              {!! Form::open(['url' => '/login', 'method' => 'POST']) !!}
               <div class="list-block">
                 <ul>
-                  <li class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Usuario</div>
-                      <div class="item-input">
-                        <input type="text" name="username" placeholder="Username">
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        {!! Form::label('nickname','Nickname:',['class' => 'item-title label']) !!}
+                        <div class="item-input">
+                          {!! Form::text('nickname', null, ['placeholder' => 'Nickname', 'required']) !!}
+                        </div>
                       </div>
                     </div>
                   </li>
-                  <li class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Contrasena</div>
-                      <div class="item-input">
-                        <input type="password" name="password" placeholder="Password">
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        {!! Form::label('password','Password:',['class' => 'item-title label']) !!}
+                        <div class="item-input">
+                          {!! Form::password('password', null, ['placeholder' => 'Password', 'required']) !!}
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -55,12 +59,17 @@
               <div class="list-block">
                 <ul>
                   <li>
-                    <p><a href="#" class="button button-fill button-big">Sing In</a></p>  
+                    {!! Form::submit('Sing In', ['class' => 'button button-fill button-big']) !!}
                   </li>
                 </ul>
                 <a href="{{route('admin')}}" >Administrador</a>
               </div>
-            </form>
+              {!! Form::close() !!}
+                @if ($errors->has('password'))
+                  <span class="help-block">
+                      <strong>{{ $errors->first('password') }}</strong>
+                  </span>
+                @endif
           </div>
 
             </div>

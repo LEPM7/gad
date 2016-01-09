@@ -64,6 +64,14 @@
                                 </div>
                               </div>
                             </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">Precio:</div>
+                                        {{$actividad->precio}}
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                             
                         </div>

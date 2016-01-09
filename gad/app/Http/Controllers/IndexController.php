@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 class IndexController extends Controller
 {
     public function index(){
-        
-       // return view('login');
+        return view('login');
     }
     
     public function admin(){
@@ -21,25 +22,25 @@ class IndexController extends Controller
     public function adminIndex(Request $request){
         $password = $request->all()["password"];
         if($password=="admin"){
-           session()->put('admin', 'tuprima');
-            return view('admin.admin');//redirect()->route('admin.menu');
+            //hacer post
+            return view('admin.admin');
         }
         else {
             return view('error')->with('error','Contrasena incorrecta');
         }
-        
-        
     }
-    
+
     public function adminMenu(){
-        dd(session()->get('admin'));
-       // dd($adminSession);
-  //      if($adminSession){
-  //          dd('tu mama');
-    //    } else {
-        //    dd('tu prima');
-//}
-        
+
+
+    }
+
+    public function usuario(){
+        $user = Auth::user();
+        if($user->nickname=="admin"){
+            return view('admin.admin');
+        }
+        return view('usuario.menu');
     }
     
 }

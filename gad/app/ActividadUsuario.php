@@ -15,6 +15,6 @@ class ActividadUsuario extends Model
     }
     
     public function actividad(){
-        return $this->belongsTo('App\Actividad')
+        return $this->belongsTo('App\Actividad');
     }
 }

@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Usuario;
+use App\User;
 
 class UsuariosController extends Controller
 {
     public function index(){
-        $usuarios = Usuario::orderBy('usuario','DESC')->paginate(100);
+        $usuarios = User::orderBy('usuario','DESC')->paginate(100);
         return view('admin.usuarios.all')->with('usuarios',$usuarios);
     }
     
@@ -19,12 +19,13 @@ class UsuariosController extends Controller
     }
     
     public function store(Request $request){
-        $user = new Usuario($request->all());
+        $user = new User($request->all());
         if($user->activo == "on"){
             $user->activo = true;
         } else {
               $user->activo = false;
         }
+        $user->password = bcrypt($user->password);
         $user->save();
         return view('admin.admin');
     }
@@ -46,7 +47,8 @@ class UsuariosController extends Controller
     }
     
     public function delete($id){
-        $affectedRows = Usuario::where('usuario', '=', $id)->delete();
-        return view('admin.admin');
+        $user = User::find($id);
+        $affectedRows = User::where('usuario', '=', $id)->delete();
+        return view('descriptiva')->with('descriptiva',$user->nombre);
     }
 }

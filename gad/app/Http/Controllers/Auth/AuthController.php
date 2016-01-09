@@ -7,9 +7,13 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Auth;
 
 class AuthController extends Controller
 {
+
+    private $username = 'nickname';
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -21,14 +25,47 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesAndRegistersUsers {
+        showLoginForm as TestLogin;
+        handleUserWasAuthenticated as handlers;
 
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+    }
+
+    use ThrottlesLogins;
+
+    protected $redirectTo = '/usuario/menu';
+
+    public function showLoginForm()
+    {
+        if (view()->exists('auth.authenticate')) {
+            return view('auth.authenticate');
+        }
+        return view('login');
+    }
+
+    protected function handleUserWasAuthenticated(Request $request, $throttles)
+    {
+        if ($throttles) {
+            $this->clearLoginAttempts($request);
+        }
+
+        if (method_exists($this, 'authenticated')) {
+            return $this->authenticated($request, Auth::user());
+        }
+
+        if(Auth::check()){
+            $password = $request->password;
+            $password = bcrypt($password);
+            $user = $request->nickname;
+            if($user == 'admin' && bcrypt('password') == $password){
+                $redirectTo = '/admin';
+            }
+        }
+
+        return redirect()->intended($this->redirectPath());
+    }
+
+
 
     /**
      * Create a new authentication controller instance.
@@ -64,8 +101,15 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'nickname' => $data['nickname'],
+            'nombre' => $data['nombre'],
+            'apellido' => $data['apellido'],
+            'telefono' => $data['telefono'],
+            'fecha_nacimiento' => $data['fecha_nacimiento'],
+            'dpi' => $data['dpi'],
+            'activo' => $data['activo'] == "on" ? true : false,
+            'dirreccion' => $data['dirreccion'],
+            'rol' => $data['rol'],
             'password' => bcrypt($data['password']),
         ]);
     }
