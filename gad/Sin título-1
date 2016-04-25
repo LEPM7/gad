@@ -1,0 +1,183 @@
+<div class="form-horizontal">
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="empresaexperienciaq">Empresa:</label>  
+                          <div class="col-md-4">
+                          <input id="empresaexperienciaq" name="empresaexperienciaq" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="girodenegocioexperiencia">Giro de Negocio:</label>
+                          <div class="col-md-4">
+                            <select id="girodenegocioexperiencia" name="girodenegocioexperiencia" class="form-control">
+                              <option value="1">Option one</option>
+                              <option value="2">Option two</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="direccionexperiencia">Direccion:</label>  
+                          <div class="col-md-4">
+                          <input id="direccionexperiencia" name="direccionexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="paisexperiencia">Pais:</label>
+                          <div class="col-md-4">
+                            <select id="paisexperiencia" name="paisexperiencia" class="form-control">
+                              <option value="1">Option one</option>
+                              <option value="2">Option two</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="telefonoexperencia">Telefono:</label>  
+                          <div class="col-md-4">
+                          <input id="telefonoexperencia" name="telefonoexperencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="jefeinmediatoexperiencia">Jefe Inmediato:</label>  
+                          <div class="col-md-4">
+                          <input id="jefeinmediatoexperiencia" name="jefeinmediatoexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="ultimopuestoexperiencia">Ultimo Puesto:</label>  
+                          <div class="col-md-4">
+                          <input id="ultimopuestoexperiencia" name="ultimopuestoexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="fechaingresoexperiencia">Fecha Ingreso:</label>  
+                          <div class="col-md-4">
+                          <input id="fechaingresoexperiencia" name="fechaingresoexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="fechafinexperiencia">Fecha Salida:</label>  
+                          <div class="col-md-4">
+                          <input id="fechafinexperiencia" name="fechafinexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Multiple Radios (inline) -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="renunciodespidoexperiencia"></label>
+                          <div class="col-md-4"> 
+                            <label class="radio-inline" for="renunciodespidoexperiencia-0">
+                              <input type="radio" name="renunciodespidoexperiencia" id="renunciodespidoexperiencia-0" value="1" checked="checked">
+                              Renuncia
+                            </label> 
+                            <label class="radio-inline" for="renunciodespidoexperiencia-1">
+                              <input type="radio" name="renunciodespidoexperiencia" id="renunciodespidoexperiencia-1" value="2">
+                              Despido
+                            </label>
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="razonsalidaexperencia">Razon de Salida:</label>  
+                          <div class="col-md-4">
+                          <input id="razonsalidaexperencia" name="razonsalidaexperencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="principalesatribucionesexperiencia">Principales Atribuciones:</label>  
+                          <div class="col-md-4">
+                          <input id="principalesatribucionesexperiencia" name="principalesatribucionesexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="principaleslogrosexperencia">Principales Logros</label>  
+                          <div class="col-md-4">
+                          <input id="principaleslogrosexperencia" name="principaleslogrosexperencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Multiple Checkboxes -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="dirigiapersonalexperiencia">Dirigia Personal</label>
+                          <div class="col-md-4">
+                          <div class="checkbox">
+                            <label for="dirigiapersonalexperiencia-0">
+                              <input type="checkbox" name="dirigiapersonalexperiencia" id="dirigiapersonalexperiencia-0" value="1">
+                              .
+                            </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="numeropersonasexperiencia">Numero de Personas:</label>  
+                          <div class="col-md-4">
+                          <input id="numeropersonasexperiencia" name="numeropersonasexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Multiple Checkboxes -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="sepuedenpedirreferenciasexperiencia">Se pueden tomar referencias ?</label>
+                          <div class="col-md-4">
+                          <div class="checkbox">
+                            <label for="sepuedenpedirreferenciasexperiencia-0">
+                              <input type="checkbox" name="sepuedenpedirreferenciasexperiencia" id="sepuedenpedirreferenciasexperiencia-0" value="1">
+                              .
+                            </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="porqueexperiencia">Porque ?</label>  
+                          <div class="col-md-4">
+                          <input id="porqueexperiencia" name="porqueexperiencia" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="tipoplazaexperiencia">Tipo de Plaza</label>
+                          <div class="col-md-4">
+                            <select id="tipoplazaexperiencia" name="tipoplazaexperiencia" class="form-control">
+                              <option value="1">Option one</option>
+                              <option value="2">Option two</option>
+                            </select>
+                          </div>
+                        </div>
+                    </div>
