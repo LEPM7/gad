@@ -6,21 +6,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $primaryKey = 'usuario';
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $table = "usuario";
+
+    protected $fillable = ['nickname', 'password', 'nombre', 'apellido', 'telefono','fecha_nacimiento','dpi','direccion','activo','rol'];
+
+    public function inscripcion(){
+        return $this->belongsToMany('App\Actividad','actividad_usuario', 'usuario','actividad');
+    }
+    
 }

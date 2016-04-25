@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actividad extends Model
 {
-	
+
+    protected $primaryKey = 'actividad';
+
     protected $table = "actividad";
 
     protected $fillable = ['nombre','descripcion','fecha_inicio', 'fecha_fin', 'cupo', 'limite', 'precio', 'estadio'];
@@ -15,7 +17,7 @@ class Actividad extends Model
         return $this->belongsTo('App\Estadio');
     }
     
-    public function actividadusuario(){
-        return $this->hasMany('App\ActividadUsuario');
+    public function inscripcion(){
+        return $this->belongsToMany('App\Usuario','actividad_usuario', 'actividad','usuario');
     }
 }

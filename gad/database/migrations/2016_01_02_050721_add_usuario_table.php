@@ -24,6 +24,7 @@ class AddUsuarioTable extends Migration
             $table->string('direccion');
             $table->boolean('activo');
             $table->string('rol');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
